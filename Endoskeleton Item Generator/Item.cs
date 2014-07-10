@@ -39,20 +39,23 @@ namespace Endoskeleton_Item_Generator
         /// <returns>Matching Quality or FAIL if none match</returns>
         public static Quality ToQualityType(string sQuality)
         {
-            if (sQuality == Quality.SUPER_COMMON.ToString())
-                return Quality.SUPER_COMMON;
-            else if (sQuality == Quality.COMMON.ToString())
-                return Quality.COMMON;
-            else if (sQuality == Quality.UNCOMMON.ToString())
-                return Quality.UNCOMMON;
-            else if (sQuality == Quality.RARE.ToString())
-                return Quality.RARE;
-            else if (sQuality == Quality.LEGENDARY.ToString())
-                return Quality.LEGENDARY;
-            else if (sQuality == Quality.MYTHIC.ToString())
-                return Quality.MYTHIC;
-            else
-                return Quality.FAIL;
+            switch (sQuality)
+            {
+                case Quality.SUPER_COMMON.ToString():
+                    return Quality.SUPER_COMMON;
+                case Quality.COMMON.ToString():
+                    return Quality.COMMON;
+                case Quality.UNCOMMON.ToString():
+                    return Quality.UNCOMMON;
+                case Quality.RARE.ToString():
+                    return Quality.RARE;
+                case Quality.LEGENDARY.ToString():
+                    return Quality.LEGENDARY;
+                case Quality.MYTHIC.ToString():
+                    return Quality.MYTHIC;
+                default:
+                    return Quality.FAIL;
+            }
         } // ToItemType
 
         /// <summary>
